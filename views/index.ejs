@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy|Fontdiner+Swanky|Comfortaa' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.pkgd.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- <script src = "/javascripts/flickity.js"></script>  -->
+  </head>
+  <body>
+
+    <h1 align="center"> ...these are a few of my favorite things...</h1>
+
+    <h2> Favorite Books </h2>
+
+    <div class="books-gallery js-flickity"
+    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+      <% books.forEach(function(book){ %>
+      <div class="books-gallery-cell" align ="center">
+      <p><img src = <%=book.cover_url%>/></p>
+      <p><h3><%=book.title%></h3></p>
+      <p><em><%=book.author%></em></p>
+      <p><a href = <%=book.buy_link%>>Buy it here!</a></p>
+      </div>
+      <% }); %>
+    </div>
+
+    <h2> Favorite Foods </h2>
+
+    <div class="foods-gallery js-flickity"
+    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+      <% foods.forEach(function(food){ %>
+      <div class="foods-gallery-cell" align ="center">
+      <p><img src = <%=food.img_url%>/></p>
+      <p><h3><%=food.name%></h3></p>
+      <p><em><%=food.cuisine_type%></em></p>
+      <p><a href = <%=food.recipe_link%>>Get the recipe!</a></p>
+      </div>
+      <% }); %>
+    </div>
+
+    <h2> Favorite Albums </h2>
+
+    <div class="albums-gallery js-flickity"
+    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+      <% albums.forEach(function(album){ %>
+      <div class="albums-gallery-cell" align ="center">
+      <p><img src = <%=album.img_url%>/></p>
+      <p><h3><%=album.title%></h3></p>
+      <p><em><%=album.artist%></em></p>
+      <p><a href = <%=album.buy_link%>>Get the recipe!</a></p>
+      </div>
+      <% }); %>
+    </div>
+
+
+
+  </body>
+</html>
